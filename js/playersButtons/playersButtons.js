@@ -1,4 +1,5 @@
 import { hideChoosePlayer } from '../choosePlayer/choosePlayer.js';
+import { activateGridButtons } from '../gameGrid/gameGrid.js';
 
 const playerX = document.getElementById('X');
 const playerO = document.getElementById('O');
@@ -37,6 +38,7 @@ export function playersButtonsInit() {
     playerX.addEventListener('click', (e) => {
         setPlayer(e);
         hideChoosePlayer();
+        activateGridButtons();
         deactivatePlayersButtons();
     });
 
@@ -44,6 +46,7 @@ export function playersButtonsInit() {
     playerO.addEventListener('click', (e) => {
         setPlayer(e);
         hideChoosePlayer();
+        activateGridButtons();
         deactivatePlayersButtons();
     });
 }
