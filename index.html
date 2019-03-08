@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,43 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Tic Tac Toe </title>
 </head>
+
 <body>
-    
+    <div class="container text-center">
+        <div class="choose-player">
+            <button class="btn btn-secondary" id="X">X</button>
+            <button class="btn btn-secondary" id="O">O</button>
+            <p class="choose-player-prompt">Choose a player</p>
+        </div>
+        <div class="score">
+            <p class="score-user">User: <span id="score-user"></span></p>
+            <p class="score-computer">Comp: <span id="score-computer"></span></p>
+        </div>
+        <h1 class="win-message" id="win-message"></h1>
+
+        <div id="grid" class="grid">
+            <div class="grid-row">
+                <button disabled class="btn btn-primary grid-btn" id="0"></button>
+                <button disabled class="btn btn-primary grid-btn" id="1"></button>
+                <button disabled class="btn btn-primary grid-btn" id="2"></button>
+            </div>
+
+            <div class="grid-row">
+                <button disabled class="btn btn-primary grid-btn" id="3"></button>
+                <button disabled class="btn btn-primary grid-btn" id="4"></button>
+                <button disabled class="btn btn-primary grid-btn" id="5"></button>
+            </div>
+
+            <div class="grid-row">
+                <button disabled class="btn btn-primary grid-btn" id="6"></button>
+                <button disabled class="btn btn-primary grid-btn" id="7"></button>
+                <button disabled class="btn btn-primary grid-btn" id="8"></button>
+            </div>
+        </div>
+
+        <button id="restart" class="restart">New game</button>
+    </div>
     <script src="js/app.js"></script>
 </body>
+
 </html>
