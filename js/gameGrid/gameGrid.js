@@ -1,5 +1,6 @@
 import { getUser, getComputer } from '../playersButtons/playersButtons.js';
 import { setTextContent } from '../winMessage/winMessage.js';
+import { setScore, displayScore } from '../score/score.js';
 
 const grid = document.getElementById('grid');
 const gridButtons = document.querySelectorAll('.grid-btn');
@@ -54,6 +55,8 @@ function computerMovement() {
             if (isCombinationAvailable(computer)) {
                 const { player, combination } = getWinningCombination(computer);
                 setTextContent('Computer', player, combination);
+                setScore('computer');
+                displayScore('computer');
             }
         }
     }
@@ -74,6 +77,8 @@ function game(e) {
             if (isCombinationAvailable(user)) {
                 const { player, combination } = getWinningCombination(user);
                 setTextContent('User', player, combination);
+                setScore('user');
+                displayScore('user');
                 return; //exit from function since the game is already won
             } else {
                 if (!choices.includes(undefined)) { //condition for draw game
