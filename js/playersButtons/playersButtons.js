@@ -24,6 +24,14 @@ function setPlayer(e) {
     }
 }
 
+export function getUser() {
+    return user;
+}
+
+export function getComputer() {
+    return computer;
+}
+
 export function playersButtonsInit() {
     //change player to X and computer to O
     playerX.addEventListener('click', (e) => {
