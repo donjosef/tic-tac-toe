@@ -38,6 +38,35 @@ function getWinningCombination(player) {
     }
 }    
 
+function drawLine(combination) {
+    switch (combination) {
+        case "012":
+            grid.classList.add('from-0-to-2');
+            break;
+        case "345":
+            grid.classList.add('from-3-to-5');
+            break;
+        case "678":
+            grid.classList.add('from-6-to-8');
+            break;
+        case "036":
+            grid.classList.add('from-0-to-6');
+            break;
+        case "147":
+            grid.classList.add('from-1-to-7');
+            break;
+        case "258":
+            grid.classList.add('from-2-to-8');
+            break;
+        case "048":
+            grid.classList.add('from-0-to-8');
+            break;
+        case "246":
+            grid.classList.add('from-2-to-6');
+            break;
+    }
+}
+
 function computerMovement() {
     const randomIndex = Math.floor(Math.random() * choices.length);
 
@@ -54,6 +83,7 @@ function computerMovement() {
         if (computerMovements >= 3) {
             if (isCombinationAvailable(computer)) {
                 const { player, combination } = getWinningCombination(computer);
+                drawLine(combination.join(""));
                 setTextContent('Computer', player, combination);
                 setScore('computer');
                 displayScore('computer');
@@ -76,6 +106,7 @@ function game(e) {
         if (userMovements >= 3) {
             if (isCombinationAvailable(user)) {
                 const { player, combination } = getWinningCombination(user);
+                drawLine(combination.join(""));
                 setTextContent('User', player, combination);
                 setScore('user');
                 displayScore('user');
