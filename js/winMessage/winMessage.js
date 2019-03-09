@@ -7,3 +7,7 @@ export function setTextContent(turn, player, combination) {
         win_message.textContent = `${turn} ${player} wins with ${combination.join('-')}`;
     }
 }
+
+export function resetWinMessage() {
+    win_message.textContent = "";
+}
