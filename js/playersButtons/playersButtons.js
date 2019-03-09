@@ -25,12 +25,26 @@ function setPlayer(e) {
     }
 }
 
+export function activatePlayersButtons() {
+    playerX.removeAttribute('disabled');
+    playerO.removeAttribute('disabled');
+    playerX.classList.add('btn-secondary');
+    playerX.classList.remove('btn-primary');
+    playerO.classList.add('btn-secondary');
+    playerO.classList.remove('btn-primary');
+}
+
 export function getUser() {
     return user;
 }
 
 export function getComputer() {
     return computer;
+}
+
+export function resetPlayers() {
+    user = undefined;
+    computer = undefined;
 }
 
 export function playersButtonsInit() {
