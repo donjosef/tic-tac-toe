@@ -95,6 +95,19 @@ export function activateGridButtons() {
     gridButtons.forEach(btn => btn.removeAttribute('disabled'));
 }
 
+export function resetGridButtons() {
+    gridButtons.forEach(gridBtn => gridBtn.textContent = "");
+}
+
+export function resetChoices() {
+    choices = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined];
+}
+
+export function resetMovements() {
+    userMovements = 0;
+    computerMovements = 0;
+}
+
 export function gridButtonsInit() {
     gridButtons.forEach(gridBtn => gridBtn.addEventListener('click', game));
 }
