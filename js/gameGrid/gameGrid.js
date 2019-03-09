@@ -139,6 +139,12 @@ export function resetMovements() {
     computerMovements = 0;
 }
 
+export function removeLine() {
+    const classes = Array.from(grid.classList);
+    const line = classes[1];
+    grid.classList.remove(line);
+}
+
 export function gridButtonsInit() {
     gridButtons.forEach(gridBtn => gridBtn.addEventListener('click', game));
 }
