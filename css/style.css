@@ -70,6 +70,80 @@ body {
     margin-top: 10px;
 }
 
+/*========== Animated line-through =========*/
+
+.grid::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3px;
+    width: 0;
+    background: #52595e;
+    transition: initial; /*avoid transition when removing line*/
+}
+
+/*HORIZONTAL*/
+.grid.from-0-to-2::after {
+    top: 35px;
+    width: 220px;
+    transition: width 0.3s linear;    
+}
+
+.grid.from-3-to-5::after {
+    top: 110px;
+    width: 220px;
+    transition: width 0.3s linear;    
+}
+
+.grid.from-6-to-8::after {
+    top: 185px;
+    width: 220px;
+    transition: width 0.3s linear;    
+}
+
+/*VERTICAL*/
+.grid.from-0-to-6::after {
+    width: 220px;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    left: 36px;
+    transition: width 0.3s linear;    
+}
+
+.grid.from-1-to-7::after {
+    width: 220px;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    left: 111px;
+    transition: width 0.3s linear;    
+}
+
+.grid.from-2-to-8::after {
+    width: 220px;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    left: 185px;
+    transition: width 0.3s linear;    
+}
+
+/*DIAGONAL*/
+
+.grid.from-0-to-8::after {
+    width: 311px; /*teorema pitagora*/
+    transform: rotate(45deg);
+    transform-origin: top left;
+    left: 0px;
+    transition: width 0.3s linear;    
+}
+
+.grid.from-2-to-6::after {
+    width: 311px; /*teorema pitagora*/
+    transform: rotate(135deg);
+    transform-origin: top left;
+    left: 220px;
+    transition: width 0.3s linear;    
+}
 
 
 
